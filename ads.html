@@ -6,259 +6,1201 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Four display ad sizes for the Ames Auto Rentals campaign.">
 <title>Display Ads | Ames Auto Rentals Campaign</title>
-<style>
-/* Ames Auto Rentals campaign site: shared styles */
-:root{
-  --slate:#17232b; --slate-2:#22333d; --orange:#ff7a45; --rust:#c2410c; --blue:#2a7fa8;
-  --paper:#f6f4f0; --sand:#e6e1d8; --ink:#17232b; --muted:#4a5a64; --mist:#d6e2e8; --line:#d9d4cb;
-  --font:"Helvetica Neue",Helvetica,Arial,sans-serif;
-  --maxw:1160px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.5}
-img,svg{max-width:100%}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
-.skip{position:absolute;left:-999px;top:0;background:#fff;color:var(--ink);padding:10px 14px;z-index:100}
-.skip:focus{left:8px;top:8px}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 16px}
 
-/* Site navigation (same on every page) */
-.site-nav{background:var(--orange);color:var(--ink);position:sticky;top:0;z-index:50}
-.site-nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:58px}
-.brand{font-weight:800;letter-spacing:1px;text-decoration:none;font-size:18px;line-height:1.05}
-.brand small{display:block;font-size:10px;letter-spacing:1.5px;font-weight:700}
-.nav-links{display:flex;gap:6px;list-style:none;margin:0;padding:0}
-.nav-links a{display:block;padding:9px 14px;border-radius:4px;text-decoration:none;font-weight:700;font-size:15px}
-.nav-links a:hover{background:rgba(23,35,43,.12)}
-.nav-links a[aria-current="page"]{background:var(--slate);color:#fff}
-.nav-toggle{display:none;background:var(--slate);color:#fff;border:0;border-radius:4px;padding:9px 14px;font:700 14px var(--font);cursor:pointer}
-@media (max-width:680px){
-  .nav-toggle{display:block}
-  .nav-links{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:var(--orange);padding:8px 24px 14px;gap:2px}
-  .nav-links.open{display:flex}
+<style>
+/* Website colors */
+:root {
+  --slate: #17232b;
+  --orange: #ff7a45;
+  --rust: #c2410c;
+  --paper: #f6f4f0;
+  --ink: #17232b;
+  --muted: #4a5a64;
+  --mist: #d6e2e8;
+  --line: #d9d4cb;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* Buttons */
-.btn{display:inline-block;background:var(--rust);color:#fff;font-weight:700;font-size:16px;padding:15px 26px;border-radius:4px;text-decoration:none;text-align:center;border:0;cursor:pointer;font-family:var(--font)}
-.btn:hover{background:#9a3309}
-.btn-ghost{background:transparent;border:2px solid #fff}
-.btn-ghost:hover{background:rgba(255,255,255,.12)}
-.link-light{color:#fff;font-weight:600}
+* {
+  box-sizing: border-box;
+}
 
-/* Hero */
-.hero{background:var(--slate);color:#fff}
-.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-top:44px;padding-bottom:60px}
-.hero-copy{flex:1 1 420px}
-.eyebrow{font-size:13px;font-weight:800;letter-spacing:2px;color:var(--orange);margin:0 0 12px}
-.hero h1{margin:0 0 16px;font-size:clamp(40px,7vw,60px);line-height:1.02;font-weight:800}
-.hero .lede{margin:0 0 26px;font-size:20px;line-height:1.4;color:var(--mist);max-width:480px}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+html {
+  scroll-behavior: smooth;
+}
 
-/* Sections */
-.section{padding:56px 0 8px}
-.section h2{margin:0 0 8px;font-size:30px;font-weight:800}
-.section .sub{margin:0 0 24px;color:var(--muted);font-size:16px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:6px}
-.card h3{margin:0;font-size:17px}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.card .tag{font-size:12px;font-weight:800;letter-spacing:1.2px;color:var(--rust)}
-.card a.more{margin-top:6px;font-weight:700;color:var(--rust)}
-.todo{background:#fff2a8;color:var(--ink);padding:0 4px;border-radius:2px}
-.note{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px 22px}
-.note h2,.note h3{margin:0 0 8px;font-size:20px}
-.note p{margin:0;color:var(--muted);font-size:15px;line-height:1.6}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.5;
+}
 
-/* Footer */
-.site-footer{background:var(--slate);color:var(--mist);margin-top:64px}
-.site-footer .wrap{padding-top:24px;padding-bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:14px}
-.site-footer a{color:var(--mist)}
-</style>
-<style>
-/* Ads page: four display ad sizes built in HTML and CSS */
-.ad-stage{background:#fff;border:1px solid var(--line);border-radius:8px;padding:20px;margin:0 0 28px}
-.ad-stage header{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:14px}
-.ad-stage h3{margin:0;font-size:18px}
-.ad-stage .spec{color:var(--muted);font-size:14px}
-.ad-scroll{overflow-x:auto;padding-bottom:4px}
-.ad-stage .why{margin:14px 0 0;color:var(--muted);font-size:14px}
-.ad-pair{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+a {
+  color: inherit;
+}
 
-.ad{position:relative;overflow:hidden;background:var(--slate);color:#fff;font-family:var(--font);display:flex;text-decoration:none}
-.ad *{box-sizing:border-box}
-.ad-brand{background:var(--orange);color:var(--ink);font-weight:800;letter-spacing:.5px;line-height:1.05}
-.ad-brand small{display:block;font-size:10px;font-weight:700;letter-spacing:1px;margin-top:3px}
-.ad-btn{display:inline-block;background:var(--rust);color:#fff;font-weight:700;border-radius:4px;text-align:center;white-space:nowrap}
-.ad-url{color:var(--mist)}
-.ad ul{list-style:none;margin:0;padding:0}
-.ad li{display:flex;align-items:flex-start;gap:8px;line-height:1.25}
-.ad li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--orange)}
-.ad svg.car{display:block;height:auto}
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
 
-/* 300x250 medium rectangle */
-.ad-mr{width:300px;height:250px;flex-direction:column}
-.ad-mr .ad-brand{height:34px;display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-size:16px;letter-spacing:1px}
-.ad-mr .ad-brand small{margin:0}
-.ad-mr .body{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:10px 14px 14px}
-.ad-mr h4{margin:0;font-size:25px;line-height:1.05;font-weight:800}
-.ad-mr .mid{display:flex;align-items:flex-end;justify-content:space-between}
-.ad-mr ul{width:150px;font-size:12px}
-.ad-mr li{margin-bottom:5px}.ad-mr li:last-child{margin-bottom:0}
-.ad-mr li::before{margin-top:4px}
-.ad-mr svg.car{width:122px}
-.ad-mr .foot{display:flex;align-items:center;justify-content:space-between}
-.ad-mr .ad-btn{font-size:14px;padding:10px 16px}
-.ad-mr .ad-url{font-size:10.5px}
+.wrap {
+  max-width: 1160px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
 
-/* 728x90 leaderboard */
-.ad-lb{width:728px;height:90px;align-items:stretch}
-.ad-lb .ad-brand{flex:none;width:176px;display:flex;flex-direction:column;justify-content:center;padding:0 16px;font-size:20px}
-.ad-lb .mid{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:0 16px}
-.ad-lb h4{margin:0;font-size:22px;line-height:1.05;font-weight:800;white-space:nowrap}
-.ad-lb ul{display:flex;gap:12px;font-size:11px;color:var(--mist)}
-.ad-lb li{align-items:center;gap:5px;white-space:nowrap}
-.ad-lb li::before{width:6px;height:6px}
-.ad-lb .side{flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:0 16px 0 0}
-.ad-lb .ad-btn{font-size:14px;padding:11px 18px}
-.ad-lb .ad-url{font-size:10px}
+/* Navigation */
+.skip {
+  position: absolute;
+  left: -9999px;
+  background: white;
+  padding: 12px;
+  z-index: 100;
+}
 
-/* 160x600 wide skyscraper */
-.ad-sk{width:160px;height:600px;flex-direction:column}
-.ad-sk .ad-brand{padding:14px 12px 12px;text-align:center;font-size:20px}
-.ad-sk .ad-brand small{margin-top:6px}
-.ad-sk .body{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:20px 14px 16px}
-.ad-sk h4{margin:0;font-size:30px;line-height:1.02;font-weight:800}
-.ad-sk svg.car{width:128px;margin:0 auto}
-.ad-sk ul{font-size:13px}.ad-sk li{margin-bottom:10px}.ad-sk li:last-child{margin-bottom:0}
-.ad-sk li::before{margin-top:5px}
-.ad-sk .foot{display:flex;flex-direction:column;gap:8px}
-.ad-sk .ad-btn{font-size:14px;padding:13px 6px}
-.ad-sk .ad-url{font-size:11px;text-align:center}
+.skip:focus {
+  left: 8px;
+  top: 8px;
+}
 
-/* 300x600 half page */
-.ad-hp{width:300px;height:600px;flex-direction:column}
-.ad-hp .ad-brand{padding:18px 22px;display:flex;align-items:center;justify-content:space-between;font-size:25px}
-.ad-hp .ad-brand small{margin:0;text-align:right;font-size:11px}
-.ad-hp .body{flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:26px 24px 22px}
-.ad-hp h4{margin:0;font-size:46px;line-height:1.02;font-weight:800}
-.ad-hp .cars{display:flex;justify-content:space-between;align-items:flex-end}
-.ad-hp ul{font-size:15px}.ad-hp li{gap:10px;margin-bottom:9px}.ad-hp li:last-child{margin-bottom:0}
-.ad-hp li::before{margin-top:6px}
-.ad-hp .foot{display:flex;flex-direction:column;gap:8px}
-.ad-hp .ad-btn{font-size:17px;padding:15px 8px}
-.ad-hp .ad-url{font-size:12px;text-align:center}
-</style>
-<style>
-/* Page layout: ads placed in standard positions around the main content */
-.top-ad{background:#fff;border-bottom:1px solid var(--line)}
-.top-ad .wrap{padding-top:14px;padding-bottom:14px}
-.ad-slot{display:flex;flex-direction:column;align-items:center;gap:5px}
-.ad-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
-.ad-scroll-x{max-width:100%;overflow-x:auto}
-.layout{display:grid;grid-template-columns:160px minmax(0,1fr) 300px;grid-template-areas:"left main right";gap:20px;align-items:start;padding-top:8px}
-.rail-left{grid-area:left}.main-col{grid-area:main}.rail-right{grid-area:right}
-.rail-left,.rail-right{position:sticky;top:78px;padding-top:56px}
-.inline-ad{margin:32px 0 8px}
-.main-col .section{padding-top:48px}
-@media (max-width:940px){
-  .layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"main" "right" "left";gap:20px}
-  .rail-left,.rail-right{position:static;padding-top:24px}
+.site-nav {
+  background: var(--orange);
+  color: var(--slate);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-nav .wrap {
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
+  line-height: 1.05;
+  text-decoration: none;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 9px 14px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background: rgba(23,35,43,.12);
+}
+
+.nav-links a[aria-current="page"] {
+  background: var(--slate);
+  color: white;
+}
+
+.nav-toggle {
+  display: none;
+  background: var(--slate);
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 14px;
+  font-weight: bold;
+}
+
+/* Campaign content */
+.section {
+  padding: 48px 0 8px;
+}
+
+.section h2 {
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+
+.section .sub {
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 16px;
+}
+
+.card,
+.note {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 18px;
+}
+
+.card h3,
+.note h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.card p,
+.note p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.card .tag {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--rust);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.site-footer {
+  margin-top: 64px;
+  background: var(--slate);
+  color: var(--mist);
+}
+
+.site-footer .wrap {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+
+/* Advertisement placement */
+.top-ad {
+  background: white;
+  border-bottom: 1px solid var(--line);
+}
+
+.top-ad .wrap {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.ad-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.ad-label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ad-scroll-x {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 160px minmax(0,1fr) 300px;
+  grid-template-areas: "left main right";
+  gap: 20px;
+  padding-top: 8px;
+  align-items: start;
+}
+
+.rail-left {
+  grid-area: left;
+}
+
+.main-col {
+  grid-area: main;
+  min-width: 0;
+}
+
+.rail-right {
+  grid-area: right;
+}
+
+.rail-left,
+.rail-right {
+  position: sticky;
+  top: 78px;
+  padding-top: 56px;
+}
+
+.inline-ad {
+  margin: 32px 0 8px;
+}
+
+/* Shared advertisement design */
+.ad {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--slate);
+  color: white;
+  text-decoration: none;
+  font-family: var(--font);
+  box-shadow: 0 4px 14px rgba(23,35,43,.16);
+  transition: box-shadow .2s ease;
+}
+
+.ad:hover {
+  box-shadow: 0 7px 22px rgba(23,35,43,.27);
+}
+
+.ad-brand {
+  background: var(--orange);
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: .5px;
+  line-height: 1.05;
+}
+
+.ad-brand small {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+
+.ad h4 {
+  font-weight: 800;
+}
+
+.ad-btn {
+  display: inline-block;
+  background: var(--rust);
+  color: white;
+  font-weight: 800;
+  border-radius: 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ad-url {
+  color: var(--mist);
+}
+
+.ad ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ad li {
+  display: flex;
+  gap: 7px;
+  align-items: flex-start;
+  line-height: 1.25;
+}
+
+.ad li::before {
+  content: "";
+  display: block;
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+
+.ad svg.car {
+  display: block;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* 728 x 90 LEADERBOARD */
+.ad-lb {
+  width: 728px;
+  height: 90px;
+  display: grid;
+  grid-template-columns: 156px minmax(0,1fr) 164px;
+}
+
+.ad-lb .ad-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 13px;
+  font-size: 18px;
+}
+
+.ad-lb .ad-brand small {
+  font-size: 9px;
+}
+
+.ad-lb .mid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 0 13px;
+}
+
+.ad-lb h4 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.08;
+}
+
+.ad-lb ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 10px;
+  font-size: 10px;
+  color: var(--mist);
+}
+
+.ad-lb li {
+  white-space: nowrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.ad-lb li::before {
+  margin-top: 0;
+  width: 5px;
+  height: 5px;
+  flex-basis: 5px;
+}
+
+.ad-lb .side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px 0 0;
+}
+
+.ad-lb .ad-btn {
+  font-size: 12px;
+  padding: 10px 11px;
+}
+
+.ad-lb .ad-url {
+  font-size: 10px;
+}
+
+/* 300 x 250 MEDIUM RECTANGLE */
+.ad-mr {
+  width: 300px;
+  height: 250px;
+  flex-direction: column;
+}
+
+.ad-mr .ad-brand {
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 13px;
+  font-size: 15px;
+}
+
+.ad-mr .ad-brand small {
+  margin: 0;
+  font-size: 9px;
+}
+
+.ad-mr .body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 12px 12px;
+  min-height: 0;
+}
+
+.ad-mr h4 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.05;
+}
+
+.ad-mr .mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7px;
+}
+
+.ad-mr ul {
+  width: 145px;
+  flex-shrink: 0;
+  font-size: 11px;
+}
+
+.ad-mr li {
+  margin-bottom: 6px;
+}
+
+.ad-mr li:last-child {
+  margin-bottom: 0;
+}
+
+.ad-mr svg.car {
+  width: 112px;
+}
+
+.ad-mr .foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.ad-mr .ad-btn {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+
+.ad-mr .ad-url {
+  font-size: 10px;
+}
+
+/* 160 x 600 SKYSCRAPER */
+.ad-sk {
+  width: 160px;
+  height: 600px;
+  flex-direction: column;
+}
+
+.ad-sk .ad-brand {
+  flex-shrink: 0;
+  padding: 14px 12px 12px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.ad-sk .body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 17px 12px 14px;
+}
+
+.ad-sk h4 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.04;
+}
+
+.ad-sk svg.car {
+  width: 126px;
+  margin: 0 auto;
+}
+
+.ad-sk ul {
+  font-size: 12px;
+}
+
+.ad-sk li {
+  margin-bottom: 8px;
+  gap: 5px;
+}
+
+.ad-sk li:last-child {
+  margin-bottom: 0;
+}
+
+.ad-sk .foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ad-sk .ad-btn {
+  font-size: 12px;
+  padding: 12px 4px;
+}
+
+.ad-sk .ad-url {
+  font-size: 10px;
+  text-align: center;
+}
+
+/* 300 x 600 HALF PAGE */
+.ad-hp {
+  width: 300px;
+  height: 600px;
+  flex-direction: column;
+}
+
+.ad-hp .ad-brand {
+  flex-shrink: 0;
+  padding: 17px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+}
+
+.ad-hp .ad-brand small {
+  margin: 0;
+  text-align: right;
+}
+
+.ad-hp .body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  padding: 22px 21px 20px;
+}
+
+.ad-hp h4 {
+  margin: 0;
+  font-size: 42px;
+  line-height: 1.04;
+}
+
+.ad-hp .cars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.ad-hp .cars svg:first-child {
+  width: 130px;
+}
+
+.ad-hp .cars svg:last-child {
+  width: 110px;
+}
+
+.ad-hp ul {
+  font-size: 14px;
+}
+
+.ad-hp li {
+  margin-bottom: 8px;
+}
+
+.ad-hp li:last-child {
+  margin-bottom: 0;
+}
+
+.ad-hp .foot {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ad-hp .ad-btn {
+  font-size: 16px;
+  padding: 13px 8px;
+}
+
+.ad-hp .ad-url {
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Mobile layout */
+@media (max-width: 940px) {
+  .layout {
+    grid-template-columns: minmax(0,1fr);
+    grid-template-areas: "main" "right" "left";
+  }
+
+  .rail-left,
+  .rail-right {
+    position: static;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 680px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 10px 24px;
+    flex-direction: column;
+    background: var(--orange);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
 }
 </style>
 </head>
+
 <body>
+
 <a class="skip" href="#main">Skip to content</a>
+
 <header class="site-nav">
-<div class="wrap">
-<a class="brand" href="index.html">AMES AUTO RENTALS<small>AMES, IOWA | CAMPAIGN SITE</small></a>
-<button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
-<nav aria-label="Main"><ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="ads.html" aria-current="page">Ads</a></li><li><a href="landing.html">Landing Page</a></li></ul></nav>
-</div>
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      AMES AUTO RENTALS
+      <small>AMES, IOWA | CAMPAIGN SITE</small>
+    </a>
+
+    <button class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="nav-links">
+      Menu
+    </button>
+
+    <nav aria-label="Main">
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ads.html" aria-current="page">Ads</a></li>
+        <li><a href="landing.html">Landing Page</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
+
 <main id="main">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="car-sedan" viewBox="0 0 244 100"><ellipse cx="122" cy="90" rx="108" ry="5" fill="#000000" opacity="0.35"/><path d="M10 70 L10 58 Q10 50 20 48 L58 44 L82 22 Q86 18 92 18 L156 18 Q164 18 170 24 L192 44 L222 50 Q232 52 232 62 L232 70 Z" fill="#FFFFFF"/><path d="M66 44 L86 24 L120 24 L120 44 Z M128 24 L156 24 L176 44 L128 44 Z" fill="#2A7FA8"/><rect x="10" y="62" width="222" height="5" fill="#FF7A45"/><circle cx="60" cy="74" r="17" fill="#17232B"/><circle cx="60" cy="74" r="7" fill="#FF7A45"/><circle cx="182" cy="74" r="17" fill="#17232B"/><circle cx="182" cy="74" r="7" fill="#FF7A45"/></symbol><symbol id="car-suv" viewBox="0 0 244 100"><ellipse cx="122" cy="90" rx="108" ry="5" fill="#000000" opacity="0.35"/><path d="M10 74 L10 52 Q10 44 20 42 L52 38 L74 16 Q78 12 84 12 L180 12 Q188 12 194 18 L214 40 L224 44 Q234 46 234 58 L234 74 Z" fill="#FFFFFF"/><path d="M60 38 L78 18 L116 18 L116 38 Z M124 18 L178 18 L196 38 L124 38 Z" fill="#2A7FA8"/><rect x="10" y="62" width="222" height="5" fill="#FF7A45"/><circle cx="60" cy="74" r="17" fill="#17232B"/><circle cx="60" cy="74" r="7" fill="#FF7A45"/><circle cx="182" cy="74" r="17" fill="#17232B"/><circle cx="182" cy="74" r="7" fill="#FF7A45"/></symbol></defs></svg>
-<div class="top-ad"><div class="wrap"><div class="ad-slot"><span class="ad-label">Advertisement | Leaderboard 728 x 90</span><div class="ad-scroll-x"><a class="ad ad-lb" href="landing.html" aria-label="Ames Auto Rentals: Need wheels in Ames? Rent local. Request a Rental">
-<div class="ad-brand"><span>AMES AUTO<br>RENTALS</span><small>AMES, IOWA</small></div>
-<div class="mid"><h4>Need wheels in Ames? Rent local.</h4><ul><li>Affordable</li><li>DSM Airport rides</li><li>First come, first served</li></ul></div>
-<div class="side"><span class="ad-btn">Request a Rental</span><span class="ad-url">amesautorentals.com</span></div></a></div></div></div></div>
+
+<!-- Car illustrations used in the ads -->
+<svg width="0" height="0"
+  style="position:absolute"
+  aria-hidden="true"
+  focusable="false">
+
+  <defs>
+
+    <symbol id="car-sedan" viewBox="0 0 244 100">
+      <ellipse cx="122" cy="90" rx="108" ry="5"
+        fill="#000" opacity=".35"/>
+
+      <path d="M10 70 L10 58 Q10 50 20 48 L58 44
+        L82 22 Q86 18 92 18 L156 18 Q164 18
+        170 24 L192 44 L222 50 Q232 52
+        232 62 L232 70 Z" fill="#fff"/>
+
+      <path d="M66 44 L86 24 L120 24 L120 44 Z
+        M128 24 L156 24 L176 44 L128 44 Z"
+        fill="#2a7fa8"/>
+
+      <rect x="10" y="62" width="222" height="5"
+        fill="#ff7a45"/>
+
+      <circle cx="60" cy="74" r="17" fill="#17232b"/>
+      <circle cx="60" cy="74" r="7" fill="#ff7a45"/>
+
+      <circle cx="182" cy="74" r="17" fill="#17232b"/>
+      <circle cx="182" cy="74" r="7" fill="#ff7a45"/>
+    </symbol>
+
+    <symbol id="car-suv" viewBox="0 0 244 100">
+      <ellipse cx="122" cy="90" rx="108" ry="5"
+        fill="#000" opacity=".35"/>
+
+      <path d="M10 74 L10 52 Q10 44 20 42 L52 38
+        L74 16 Q78 12 84 12 L180 12 Q188 12
+        194 18 L214 40 L224 44 Q234 46
+        234 58 L234 74 Z" fill="#fff"/>
+
+      <path d="M60 38 L78 18 L116 18 L116 38 Z
+        M124 18 L178 18 L196 38 L124 38 Z"
+        fill="#2a7fa8"/>
+
+      <rect x="10" y="62" width="222" height="5"
+        fill="#ff7a45"/>
+
+      <circle cx="60" cy="74" r="17" fill="#17232b"/>
+      <circle cx="60" cy="74" r="7" fill="#ff7a45"/>
+
+      <circle cx="182" cy="74" r="17" fill="#17232b"/>
+      <circle cx="182" cy="74" r="7" fill="#ff7a45"/>
+    </symbol>
+
+  </defs>
+</svg>
+
+
+<!-- AD 1: 728 x 90 -->
+
+<div class="top-ad">
+  <div class="wrap">
+    <div class="ad-slot">
+
+      <span class="ad-label">
+        Advertisement | Leaderboard 728 x 90
+      </span>
+
+      <div class="ad-scroll-x">
+        <a class="ad ad-lb"
+          href="landing.html"
+          aria-label="Ames Auto Rentals: Need wheels in Ames? Request a Rental">
+
+          <div class="ad-brand">
+            <span>AMES AUTO<br>RENTALS</span>
+            <small>AMES, IOWA</small>
+          </div>
+
+          <div class="mid">
+            <h4>Need wheels in Ames?</h4>
+
+            <ul>
+              <li>Affordable</li>
+              <li>DSM Airport rides</li>
+              <li>First come, first served</li>
+            </ul>
+          </div>
+
+          <div class="side">
+            <span class="ad-btn">Request a Rental</span>
+            <span class="ad-url">amesautorentals.com</span>
+          </div>
+
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
 <div class="wrap">
 <div class="layout">
-<aside class="rail-left" aria-label="Advertisement"><div class="ad-slot"><span class="ad-label">Ad | 160 x 600</span><a class="ad ad-sk" href="landing.html" aria-label="Ames Auto Rentals: Rent local in Ames. Request a Rental">
-<div class="ad-brand"><span>AMES<br>AUTO<br>RENTALS</span><small>AMES, IOWA</small></div>
-<div class="body"><h4>Rent local in Ames.</h4><svg class="car" viewBox="0 0 244 100" role="img" aria-label="Illustration of a sedan"><use href="#car-sedan"/></svg>
-<ul><li>Affordable rates</li><li>Cars to vans</li><li>Rides to DSM Airport</li><li>First come, first served</li></ul>
-<div class="foot"><span class="ad-btn">Request a Rental</span><span class="ad-url">amesautorentals.com</span></div></div></a></div></aside>
+
+
+<!-- AD 2: 160 x 600 -->
+
+<aside class="rail-left" aria-label="Advertisement">
+  <div class="ad-slot">
+
+    <span class="ad-label">Ad | 160 x 600</span>
+
+    <a class="ad ad-sk"
+      href="landing.html"
+      aria-label="Ames Auto Rentals: Rent local in Ames. Request a Rental">
+
+      <div class="ad-brand">
+        <span>AMES<br>AUTO<br>RENTALS</span>
+        <small>AMES, IOWA</small>
+      </div>
+
+      <div class="body">
+
+        <h4>Rent local in Ames.</h4>
+
+        <svg class="car"
+          viewBox="0 0 244 100"
+          role="img"
+          aria-label="Illustration of a sedan">
+          <use href="#car-sedan"/>
+        </svg>
+
+        <ul>
+          <li>Affordable rates</li>
+          <li>Cars to vans</li>
+          <li>Rides to DSM Airport</li>
+          <li>First come, first served</li>
+        </ul>
+
+        <div class="foot">
+          <span class="ad-btn">Request a Rental</span>
+          <span class="ad-url">amesautorentals.com</span>
+        </div>
+
+      </div>
+    </a>
+
+  </div>
+</aside>
+
+
+<!-- Campaign information -->
+
 <div class="main-col">
+
 <section class="section" id="campaign" aria-labelledby="camp-h">
-<h2 id="camp-h">Campaign description</h2>
-<p class="sub">Targeting, goal, hook, and the benchmark estimates behind the budget.</p>
-<div class="grid">
-<div class="card"><span class="tag">GOAL</span><h3>Drive rental requests</h3><p>A direct-response campaign: every ad and the landing page push one action — submit a rental request.</p></div>
-<div class="card"><span class="tag">TARGET AUDIENCE</span><h3>Iowa State visitors and families</h3><p>Parents, alumni, and fans traveling to Ames for games, move-in, and campus visits. Secondary: Ames locals who need a car for a few days and students renting in their own name.</p></div>
-<div class="card"><span class="tag">PLACEMENT TARGETING</span><h3>Local and travel sites</h3><p>Iowa State Daily, Ames Tribune, Cyclones.com, KCCI, WHO 13, Visit Ames, and Tripadvisor — Iowa State and central-Iowa news plus travel and trip-planning sites, geo-targeted to the Ames area. Estimated CPMs run $5 to $14.</p></div>
-<div class="card"><span class="tag">THE HOOK</span><h3>“Need wheels in Ames?”</h3><p>A short, local question, varied slightly by ad size (“Rent local in Ames.”). Core message: affordable local rentals, easy to request, with rides to DSM Airport.</p></div>
-</div>
+
+  <h2 id="camp-h">Campaign description</h2>
+
+  <p class="sub">
+    Targeting, goal, hook, and the benchmark estimates behind the budget.
+  </p>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag">GOAL</span>
+      <h3>Drive rental requests</h3>
+      <p>
+        A direct-response campaign: every ad and the landing
+        page push one action — submit a rental request.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="tag">TARGET AUDIENCE</span>
+      <h3>Iowa State visitors and families</h3>
+      <p>
+        Parents, alumni, and fans traveling to Ames for
+        games, move-in, and campus visits. Secondary: Ames
+        locals who need a car for a few days and students
+        renting in their own name.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="tag">PLACEMENT TARGETING</span>
+      <h3>Local and travel sites</h3>
+      <p>
+        Iowa State Daily, Ames Tribune, Cyclones.com, KCCI,
+        WHO 13, Visit Ames, and Tripadvisor — Iowa State
+        and central-Iowa news plus travel and trip-planning
+        sites, geo-targeted to the Ames area.
+        Estimated CPMs run $5 to $14.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="tag">THE HOOK</span>
+      <h3>“Need wheels in Ames?”</h3>
+      <p>
+        A short, local question, varied slightly by ad size
+        (“Rent local in Ames.”). Core message: affordable
+        local rentals, easy to request, with rides to DSM Airport.
+      </p>
+    </div>
+
+  </div>
 </section>
-<div class="inline-ad"><div class="ad-slot"><span class="ad-label">Advertisement | Medium Rectangle 300 x 250</span><a class="ad ad-mr" href="landing.html" aria-label="Ames Auto Rentals: Need wheels in Ames? Request a Rental">
-<div class="ad-brand"><span>AMES AUTO RENTALS</span><small>AMES, IOWA</small></div>
-<div class="body"><h4>Need wheels in Ames?</h4>
-<div class="mid"><ul><li>Affordable local rentals</li><li>Rides to DSM Airport</li><li>First come, first served</li></ul><svg class="car" viewBox="0 0 244 100" role="img" aria-label="Illustration of a sedan"><use href="#car-sedan"/></svg></div>
-<div class="foot"><span class="ad-btn">Request a Rental</span><span class="ad-url">amesautorentals.com</span></div></div></a></div></div>
+
+
+<!-- AD 3: 300 x 250 -->
+
+<div class="inline-ad">
+<div class="ad-slot">
+
+  <span class="ad-label">
+    Advertisement | Medium Rectangle 300 x 250
+  </span>
+
+  <a class="ad ad-mr"
+    href="landing.html"
+    aria-label="Ames Auto Rentals: Need wheels in Ames? Request a Rental">
+
+    <div class="ad-brand">
+      <span>AMES AUTO RENTALS</span>
+      <small>AMES, IOWA</small>
+    </div>
+
+    <div class="body">
+
+      <h4>Need wheels in Ames?</h4>
+
+      <div class="mid">
+
+        <ul>
+          <li>Affordable local rentals</li>
+          <li>Rides to DSM Airport</li>
+          <li>First come, first served</li>
+        </ul>
+
+        <svg class="car"
+          viewBox="0 0 244 100"
+          role="img"
+          aria-label="Illustration of a sedan">
+          <use href="#car-sedan"/>
+        </svg>
+
+      </div>
+
+      <div class="foot">
+        <span class="ad-btn">Request a Rental</span>
+        <span class="ad-url">amesautorentals.com</span>
+      </div>
+
+    </div>
+  </a>
+
+</div>
+</div>
+
+
+<!-- Financial estimates -->
+
 <section class="section" aria-labelledby="fin-h">
-<h2 id="fin-h" style="font-size:24px">Financial estimates (4-week campaign)</h2>
-<p class="sub">Modeled on published display benchmarks for travel / vehicle rental. Bought on a CPM basis: impressions lead to clicks, clicks lead to rental requests.</p>
-<table style="width:100%;border-collapse:collapse;font-size:15px;background:#fff;border:1px solid #d9d4cb;border-radius:8px;overflow:hidden">
-<tr><th style="text-align:left;padding:11px 14px;background:#17232b;color:#fff;font-weight:800">Metric</th><th style="text-align:right;padding:11px 14px;background:#17232b;color:#fff;font-weight:800">Value</th></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee">Budget (4 weeks)</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">$1,500</td></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee">Average CPM (range $5–$14)</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">$8.50</td></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee">Estimated impressions</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">~176,000</td></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee">CTR (display benchmark)</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">0.52%</td></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee">Estimated clicks</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">~918</td></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee">Conversion rate (display benchmark)</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">0.50%</td></tr>
-<tr><td style="padding:11px 14px;border-top:1px solid #eee;font-weight:800">Estimated rental requests</td><td style="padding:11px 14px;border-top:1px solid #eee;text-align:right;font-weight:800">4–5</td></tr>
+
+<h2 id="fin-h" style="font-size:24px">
+  Financial estimates (4-week campaign)
+</h2>
+
+<p class="sub">
+  Modeled on published display benchmarks for travel /
+  vehicle rental. Bought on a CPM basis: impressions lead
+  to clicks, clicks lead to rental requests.
+</p>
+
+<div style="overflow-x:auto">
+
+<table style="
+  width:100%;
+  border-collapse:collapse;
+  font-size:15px;
+  background:#fff;
+  border:1px solid #d9d4cb;
+">
+
+<tr>
+  <th style="text-align:left;padding:11px 14px;background:#17232b;color:#fff">
+    Metric
+  </th>
+  <th style="text-align:right;padding:11px 14px;background:#17232b;color:#fff">
+    Value
+  </th>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee">
+    Budget (4 weeks)
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    $1,500
+  </td>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee">
+    Average CPM (range $5–$14)
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    $8.50
+  </td>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee">
+    Estimated impressions
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    ~176,000
+  </td>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee">
+    CTR (display benchmark)
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    0.52%
+  </td>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee">
+    Estimated clicks
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    ~918
+  </td>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee">
+    Conversion rate (display benchmark)
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    0.50%
+  </td>
+</tr>
+
+<tr>
+  <td style="padding:11px 14px;border-top:1px solid #eee;font-weight:800">
+    Estimated rental requests
+  </td>
+  <td style="padding:11px 14px;border-top:1px solid #eee;text-align:right">
+    4–5
+  </td>
+</tr>
+
 </table>
-<p style="font-size:12.5px;color:#4a5a64;margin-top:8px">Benchmarks: all-industry Google Display Network averages (CTR ≈ 0.46–0.52%, conversion ≈ 0.5–0.57%, per WordStream); premium local-news and travel placements modeled at an $8.50 blended CPM ($5–$14 range). Figures are planning estimates, not guarantees.</p>
+
+</div>
+
+<p style="font-size:12.5px;color:#4a5a64;margin-top:8px">
+  Benchmarks: all-industry Google Display Network averages
+  (CTR ≈ 0.46–0.52%, conversion ≈ 0.5–0.57%, per WordStream);
+  premium local-news and travel placements modeled at an
+  $8.50 blended CPM ($5–$14 range). Figures are planning
+  estimates, not guarantees.
+</p>
+
 </section>
-<section class="section"><div class="note"><h3>Creative notes</h3><p>All four sizes share the orange brand block, the same call to action, and the same URL. Wording varies slightly by size so the same message fits each space. Each ad is clickable and leads to the <a href="landing.html">landing page</a>. Car images are illustrations, not photos of the fleet.</p></div></section>
+
+
+<section class="section">
+
+  <div class="note">
+
+    <h3>Creative notes</h3>
+
+    <p>
+      All four sizes share the orange brand block, the same
+      call to action, and the same URL. Wording varies slightly
+      by size so the same message fits each space. Each ad
+      is clickable and leads to the
+      <a href="landing.html">landing page</a>.
+      Car images are illustrations, not photos of the fleet.
+    </p>
+
+  </div>
+
+</section>
+
 </div>
-<aside class="rail-right" aria-label="Advertisement"><div class="ad-slot"><span class="ad-label">Advertisement | Half Page 300 x 600</span><a class="ad ad-hp" href="landing.html" aria-label="Ames Auto Rentals: Need wheels in Ames? Request a Rental">
-<div class="ad-brand"><span>AMES AUTO<br>RENTALS</span><small>AMES,<br>IOWA</small></div>
-<div class="body"><h4>Need wheels<br>in Ames?</h4><div class="cars"><svg class="car" width="138" viewBox="0 0 244 100" role="img" aria-label="Illustration of a sedan"><use href="#car-sedan"/></svg><svg class="car" width="116" viewBox="0 0 244 100" role="img" aria-label="Illustration of a SUV"><use href="#car-suv"/></svg></div>
-<ul><li>Affordable car rentals, right here in Ames</li><li>Compact cars to a 15-passenger van</li><li>Rides to DSM Airport</li><li>First come, first served</li></ul>
-<div class="foot"><span class="ad-btn">Request a Rental</span><span class="ad-url">amesautorentals.com</span></div></div></a></div></aside>
+
+
+<!-- AD 4: 300 x 600 -->
+
+<aside class="rail-right" aria-label="Advertisement">
+<div class="ad-slot">
+
+  <span class="ad-label">
+    Advertisement | Half Page 300 x 600
+  </span>
+
+  <a class="ad ad-hp"
+    href="landing.html"
+    aria-label="Ames Auto Rentals: Need wheels in Ames? Request a Rental">
+
+    <div class="ad-brand">
+      <span>AMES AUTO<br>RENTALS</span>
+      <small>AMES,<br>IOWA</small>
+    </div>
+
+    <div class="body">
+
+      <h4>Need wheels<br>in Ames?</h4>
+
+      <div class="cars">
+
+        <svg class="car"
+          viewBox="0 0 244 100"
+          role="img"
+          aria-label="Illustration of a sedan">
+          <use href="#car-sedan"/>
+        </svg>
+
+        <svg class="car"
+          viewBox="0 0 244 100"
+          role="img"
+          aria-label="Illustration of an SUV">
+          <use href="#car-suv"/>
+        </svg>
+
+      </div>
+
+      <ul>
+        <li>Affordable car rentals, right here in Ames</li>
+        <li>Compact cars to a 15-passenger van</li>
+        <li>Rides to DSM Airport</li>
+        <li>First come, first served</li>
+      </ul>
+
+      <div class="foot">
+        <span class="ad-btn">Request a Rental</span>
+        <span class="ad-url">amesautorentals.com</span>
+      </div>
+
+    </div>
+  </a>
+
+</div>
+</aside>
+
 </div>
 </div>
+
 </main>
+
+
 <footer class="site-footer">
+
 <div class="wrap">
-<div>Class project mockup. Not the official Ames Auto Rentals website. Rates and phone are from amesautorentals.com; check there for current prices.</div>
-<div><a href="index.html">Home</a> | <a href="ads.html">Ads</a> | <a href="landing.html">Landing Page</a></div>
+
+  <div>
+    Class project mockup. Not the official Ames Auto Rentals
+    website. Rates and phone are from amesautorentals.com;
+    check there for current prices.
+  </div>
+
+  <div>
+    <a href="index.html">Home</a> |
+    <a href="ads.html">Ads</a> |
+    <a href="landing.html">Landing Page</a>
+  </div>
+
 </div>
+
 </footer>
+
+
 <script>
-// Mobile navigation toggle
+// Mobile navigation
 (function () {
-  var btn = document.querySelector('.nav-toggle');
-  var links = document.getElementById('nav-links');
-  if (btn && links) {
-    btn.addEventListener('click', function () {
-      var open = links.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-  // Landing page: the request form is a mockup, so nothing is sent anywhere
-  var form = document.getElementById('request-form');
-  var msg = document.getElementById('form-msg');
-  if (form && msg) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      msg.classList.add('show');
-      msg.focus();
+  const button = document.querySelector('.nav-toggle');
+  const links = document.getElementById('nav-links');
+
+  if (button && links) {
+    button.addEventListener('click', function () {
+      const open = links.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
     });
   }
 })();
 </script>
+
 </body>
 </html>
